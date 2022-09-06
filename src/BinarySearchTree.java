@@ -11,7 +11,7 @@ public class BinarySearchTree {
     }
 
     // 2-Binary search tree root
-    Node root;
+    static Node root;
 
     // 3-Contructor
     BinarySearchTree() {
@@ -56,6 +56,20 @@ public class BinarySearchTree {
         }
     }
 
+    public Node search(Node root, int key)
+    {
+        // Basic case: the key is empty or the key is in the root
+        if (root==null || root.key==key)
+            return root;
+
+        // The key must be greater than the root key
+        if (root.key > key)
+            return search(root.left, key);
+
+        // The key must be smaller than the root key
+        return search(root.right, key);
+    }
+
     // Test
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
@@ -77,5 +91,8 @@ public class BinarySearchTree {
 
         // Printing
         tree.inorder();
+
+        //search
+        System.out.println(tree.search(root,55).key);
     }
 }
