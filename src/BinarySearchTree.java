@@ -1,32 +1,3 @@
-# binary-search-tree
-
-## Introduction
-
-A binary search tree is a binary tree that contains nodes and has the following properties:
-
-1-The left branch of a node contains nodes that have keys with a value less than the key value of this node.<br>
-2-The right branch of a node contains nodes that have keys with a value greater than the key value of this node.<br>
-3-The left and right branch must also be binary search trees, and no nodes can be the same.<br>
-<strong>Remark</strong> : These properties impose a special order of the elements in the binary data tree that depends on the value of the key, and as a result, the execution of searches and finds the minimum or maximum value is faster.<br>
-<img src="./Images/img1.png">
-
-## Insert a key into the binary search tree
-
-The new element is always inserted into the leaf node. We start searching for a specific key starting from the root and ending with the leaf node. If we find a leaf node, we include the new node as its child node.
-
-```
-         100                               100
-        /   \        Insert 40            /    \
-      20     500    --------->          20     500
-     /  \                              /  \
-    10   30                           10   30
-                                            \
-                                            40
-```
-
-With Java :
-
-```
 public class BinarySearchTree {
     // 1-A class that contains the left and right nodes of the current node and the key value
     class Node {
@@ -108,7 +79,3 @@ public class BinarySearchTree {
         tree.inorder();
     }
 }
-```
-
-<strong>time complexity</strong><br>
-The worst possible search and insert time complexity is O(h) and h is the height of the binary search tree. In the worst case scenario, we will have to navigate through the tree elements from the root to the last leaf node. Sometimes the height of the skewed data tree can be n and then the insert and lookup times complexity is O(n).
